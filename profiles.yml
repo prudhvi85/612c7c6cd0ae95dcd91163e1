@@ -1,11 +1,12 @@
-target: "dev"
-outputs:
-  dev:
-    type: "snowflake"
-    password: "Thunder10@."
-    role: "ACCOUNTADMIN"
-    database: "DEMO_DB"
-    warehouse: "COMPUTE_WH"
-    schema: "PUBLIC"
-    threads: 10
-    client_session_keep_alive: false
+snowflake:
+  target: "dev"
+  outputs:
+    dev:
+      type: "snowflake"
+      password: "Thunder10@."
+      role: "ACCOUNTADMIN"
+      database: "DEMO_DB"
+      warehouse: "COMPUTE_WH"
+      schema: "PUBLIC"
+      threads: 10
+      client_session_keep_alive: false
