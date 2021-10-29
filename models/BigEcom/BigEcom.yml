@@ -1,7 +1,7 @@
 version: 2
 sources:
   - name: "2345_nvcheckBigEcom"
-    description: "Its Maplemonk DBs"
+    description: "Its Maplemonk Transformation"
     database: "DEMO_DB"
     schema: "PUBLIC"
     tables:
