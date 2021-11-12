@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: "dbf11db6-fb90-4621-8395-9d518917da03_gitiCheckEmployee_Attrition_Data_csv"
+    description: "Its Maplemonk Transformation"
+    database: "DEMO_DB"
+    schema: "public"
+    tables:
+      - name: "Employee_Attrition_Data_csv"
