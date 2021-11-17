@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "UPDATE {{ source('89cb16d2-107c-4028-aa65-fee518edbf73_gitJamnew_table','new_table') }} SET number=1 where number=5008;",
+                    "sql": "UPDATE {{ source('89cb16d2-107c-4028-aa65-fee518edbf73_gitJamnew_table','new_table') }} SET number=1 where number=5008",
                     "transaction": true
                 }
             ) }}
