@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "[object Promise]",
+                    "sql": "UPDATE new_table SET number=1 where number=5008;",
                     "transaction": true
                 }
             ) }}
