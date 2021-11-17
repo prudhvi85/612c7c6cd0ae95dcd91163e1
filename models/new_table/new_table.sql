@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": 'UPDATE "DEMO_DB"."MAYANK"."NEW_TABLE" SET number=1 where number=5008;',
+                    "sql": "UPDATE {{ ref('new_table') }} SET number=1 where number=5008;",
                     "transaction": true
                 }
             ) }}
