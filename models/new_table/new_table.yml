@@ -3,6 +3,6 @@ sources:
   - name: "89cb16d2-107c-4028-aa65-fee518edbf73_gitJamnew_table"
     description: "Its Maplemonk Transformation"
     database: "DEMO_DB"
-    schema: "public"
+    schema: "MAYANK"
     tables:
       - name: "new_table"
