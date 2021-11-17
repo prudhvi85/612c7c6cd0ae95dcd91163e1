@@ -1,4 +1,4 @@
-snowflake:
+default:
   target: "dev"
   outputs:
     dev:
