@@ -6,7 +6,7 @@
                 }
             ) }}
             ;with sample_data as (
-                select * from {{ source('maplemonk_db_ecommerce','new_table') }}
+                select * from {{ source('89cb16d2-107c-4028-aa65-fee518edbf73_gitJamnew_table','new_table') }}
             ),
             
             final as (
