@@ -5,7 +5,7 @@
                     "transaction": true
                 }
             ) }}
-            ;with sample_data as (
+             with sample_data as (
                 select * from DEMO_DB.MAYANK.new_table
             ),
             
