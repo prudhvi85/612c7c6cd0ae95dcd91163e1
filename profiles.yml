@@ -9,4 +9,6 @@ snowflake:
       warehouse: "COMPUTE_WH"
       schema: "public"
       threads: 10
+      account: "XBA31693.us-east-1"
+      user: "Mayank"
       client_session_keep_alive: false
