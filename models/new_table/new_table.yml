@@ -1,6 +1,6 @@
 version: 2
-sources:
-  - name: "89cb16d2-107c-4028-aa65-fee518edbf73_gitJamnew_table"
+models:
+  - name: "new_table"
     description: "Its Maplemonk Transformation"
     database: "DEMO_DB"
     schema: "MAYANK"
