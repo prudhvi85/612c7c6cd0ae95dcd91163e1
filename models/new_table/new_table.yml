@@ -1,8 +1,0 @@
-version: 2
-models:
-  - name: "new_table"
-    description: "Its Maplemonk Transformation"
-    database: "DEMO_DB"
-    schema: "MAYANK"
-    tables:
-      - name: "new_table"
