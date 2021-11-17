@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: "ed13af53-7332-4a4e-bcb4-058c24e3e76f_gitiCheckEcommerce_Data_csv"
+    description: "Its Maplemonk Transformation"
+    database: "DEMO_DB"
+    schema: "public"
+    tables:
+      - name: "Ecommerce_Data_csv"
