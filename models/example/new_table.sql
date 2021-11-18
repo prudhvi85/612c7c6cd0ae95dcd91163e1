@@ -1,11 +1,12 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "UPDATE DEMO_DB.MAYANK.new_table SET number=444 where number=1;",
+                    "sql": "UPDATE new_table SET number=444 where number=1;",
                     "transaction": true
                 }
             ) }}
             with sample_data as (
+
                 select * from 'DEMO_DB.MAYANK.new_table'
             ),
             
