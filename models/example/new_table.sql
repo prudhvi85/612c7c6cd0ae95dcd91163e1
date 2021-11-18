@@ -7,7 +7,7 @@
             ) }}
             with sample_data as (
 
-                select * from DEMO_DB.undefined.new_table
+                select * from DEMO_DB.mayank.new_table
             ),
             
             final as (
