@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "UPDATE new_table SET number=444 where number=1;",
+                    "sql": "UPDATE DEMO_DB.mayank.new_table SET number=444 where number=5008;",
                     "transaction": true
                 }
             ) }}
