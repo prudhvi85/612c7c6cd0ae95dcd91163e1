@@ -9,6 +9,6 @@ default:
       role: "ACCOUNTADMIN"
       database: "DEMO_DB"
       warehouse: "COMPUTE_WH"
-      schema: "PUBLIC"
+      schema: "public"
       threads: 10
       client_session_keep_alive: false
