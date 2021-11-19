@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": ["UPDATE DB_DEMO.mayank.new_table SET number = 1001 where number=36;", "ALTER TABLE DB_DEMO.mayank.new_table ADD newCol varchar(255);", "SELECT *, (id + number) AS Sum FROM DB_DEMO.mayank.new_table;"],
+                    "sql": "UPDATE DB_DEMO.mayank.new_table SET number = 1001 where number=36; ALTER TABLE DB_DEMO.mayank.new_table ADD newCol varchar(255); SELECT *, (id + number) AS Sum FROM DB_DEMO.mayank.new_table;",
                     "transaction": true
                 }
             ) }}
