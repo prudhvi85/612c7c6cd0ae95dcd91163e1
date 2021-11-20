@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: "ads_insights_region"
+    description: "A starter dbt model"
