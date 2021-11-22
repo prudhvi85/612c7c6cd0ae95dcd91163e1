@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "Create table DEMO_DB.AKA_DB.EXPERIMENT(name varchar(30),deci float);;",
+                    "sql": "Create table DEMO_DB.AKA_DB.EXPERIMENT(name varchar(30),deci float);",
                     "transaction": true
                 }
             ) }}
