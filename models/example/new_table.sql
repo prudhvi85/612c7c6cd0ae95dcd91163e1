@@ -1,13 +1,13 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "UPDATE DEMO_DB.mayank.new_table SET number=444 where number=5008;",
+                    "sql": "alter table DEMO_DB.AKA_DB.NAVEEN_Test RENAME TO DEMO_DB.AKA_DB.NAV_HOPE_TEST;",
                     "transaction": true
                 }
             ) }}
             with sample_data as (
 
-                select * from DEMO_DB.mayank.new_table
+                select * from DEMO_DB.AKA_DB.TESTSEC
             ),
             
             final as (

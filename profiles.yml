@@ -3,9 +3,9 @@ default:
   outputs:
     dev:
       type: "snowflake"
-      account: "XBA31693.us-east-1"
-      user: "Mayank"
-      password: "Maplemonk@123"
+      account: "eq66774.ap-southeast-1"
+      user: "krishna123"
+      password: "Maple@2021"
       role: "ACCOUNTADMIN"
       database: "DEMO_DB"
       warehouse: "COMPUTE_WH"
