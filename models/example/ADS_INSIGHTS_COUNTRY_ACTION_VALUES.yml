@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: "ADS_INSIGHTS_COUNTRY_ACTION_VALUES"
+    description: "A starter dbt model"
