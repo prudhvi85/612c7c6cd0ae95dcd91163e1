@@ -1,0 +1,17 @@
+{{ config(
+            materialized='table',
+                post_hook={
+                    "sql": "DROP TABLE If exists anveshan_db.public.FACT_ITEMS CREATE TABLE anveshan_db.public.FACT_ITEMS AS SELECT Cast(O.id AS VARCHAR(16777216)) AS Order_ID, C.id Customer_ID, Ol1.id AS Item_ID, Cast(Ol1.product_id AS VARCHAR(16777216)) Product_ID, CASE WHEN P.title IS NULL THEN 'NA' ELSE P.title END AS Product_Name, CASE WHEN Cd.city IS NULL OR Cd.city = '' THEN 'NA' ELSE Cd.city END AS City, CASE WHEN Cd.province IS NULL OR Cd.province = '' THEN 'NA' ELSE Cd.province END AS State, CASE WHEN P.product_type = '' THEN 'NA' ELSE P.product_type END AS Category, CASE WHEN O.cancelled_at IS NULL THEN 0 ELSE 1 END AS Cancelled_Flag, Cast(O.created_at AS DATETIME) Order_Timestamp, Sum(Ol1.price * Ol1.quantity) AS Sales, Sum(O.total_tax) / Sum(Ol2.items) AS Tax, Sum(O.total_discounts) / Sum(Ol2.items) AS Discount, Sum(Ol1.quantity) Quantity, 'Shopify' AS Source FROM anveshan_db.PUBLIC.orders O LEFT JOIN anveshan_db.PUBLIC.orders_line_items Ol1 ON O._airbyte_orders_hashid = Ol1._airbyte_orders_hashid LEFT JOIN (SELECT _airbyte_orders_hashid, Count(1) AS Items FROM anveshan_db.PUBLIC.orders_line_items GROUP BY _airbyte_orders_hashid) Ol2 ON O._airbyte_orders_hashid = Ol2._airbyte_orders_hashid LEFT JOIN anveshan_db.PUBLIC.products P ON Ol1.product_id = P.id LEFT JOIN anveshan_db.PUBLIC.customers C ON O.id = C.last_order_id LEFT JOIN (SELECT customer_id, city, province, Row_number() OVER ( partition BY customer_id ORDER BY id DESC) rowid FROM anveshan_db.PUBLIC.customers_addresses) AS Cd ON C.id = Cd.customer_id AND Cd.rowid = 1 GROUP BY Cast(O.id AS VARCHAR(16777216)), C.id, Ol1.id, Cast(Ol1.product_id AS VARCHAR(16777216)), CASE WHEN P.title IS NULL THEN 'NA' ELSE P.title END, CASE WHEN Cd.city IS NULL OR Cd.city = '' THEN 'NA' ELSE Cd.city END, CASE WHEN Cd.province IS NULL OR Cd.province = '' THEN 'NA' ELSE Cd.province END, CASE WHEN P.product_type = '' THEN 'NA' ELSE P.product_type END, CASE WHEN O.cancelled_at IS NULL THEN 0 ELSE 1 END, Cast(O.created_at AS DATETIME) UNION SELECT Co.id Order_ID, Co.customer_id, Coi.id Item_ID, Coi.product_sku_id AS Product_ID, CASE WHEN Ca.NAME IS NULL THEN 'NA' ELSE Ca.NAME END AS Product_Name, Cc.city, Cc.address_state AS State, 'NA' AS Category, CASE WHEN Co.order_status = 'CANCELLED' THEN 1 ELSE 0 END AS Cancelled_Flag, Cast(Co.order_date_time AS DATETIME) AS Order_Timestamp, Sum(Coi.price_without_tax * Coi.quantity) Sales, NULL AS Tax, Sum(Coi.discount) Discount, Sum(Coi.quantity) Quantity, Co.channel AS Source FROM anveshan_db.PUBLIC.core_order Co INNER JOIN anveshan_db.PUBLIC.core_orderitems Coi ON Co.id = Coi.order_id LEFT JOIN anveshan_db.PUBLIC.core_customer Cc ON Co.customer_id = Cc.id LEFT JOIN anveshan_db.PUBLIC.core_anveshanproductsku Ca ON Coi.product_sku_id = Ca.sku_code WHERE Co.channel <> 'SHOPIFY' GROUP BY Co.id, Co.customer_id, Coi.id, Coi.product_sku_id, CASE WHEN Ca.NAME IS NULL THEN 'NA' ELSE Ca.NAME END, Cc.city, Cc.address_state, CASE WHEN Co.order_status = 'CANCELLED' THEN 1 ELSE 0 END, Cast(Co.order_date_time AS DATETIME), Co.channel",
+                    "transaction": true
+                }
+            ) }}
+            with sample_data as (
+
+                select * from Anveshan_DB.information_schema.databases
+            ),
+            
+            final as (
+                select * from sample_data
+            )
+            select * from final
+            

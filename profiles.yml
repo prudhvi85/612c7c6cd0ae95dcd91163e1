@@ -1,0 +1,14 @@
+default:
+  target: "dev"
+  outputs:
+    dev:
+      type: "snowflake"
+      account: "cf07222.ap-south-1.aws"
+      user: "anveshanlogin"
+      password: "sH2R5YJ78PqAn4d"
+      role: "SYSADMIN"
+      database: "Anveshan_DB"
+      warehouse: "Anveshan_WH"
+      schema: "PUBLIC"
+      threads: 10
+      client_session_keep_alive: false
