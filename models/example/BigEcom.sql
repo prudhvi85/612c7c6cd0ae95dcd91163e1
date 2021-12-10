@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "vfvfdbsgb",
+                    "sql": "ALTER TABLE DEMO_DB.PUBLIC.BigEcom ADD Email varchar(255);",
                     "transaction": true
                 }
             ) }}
