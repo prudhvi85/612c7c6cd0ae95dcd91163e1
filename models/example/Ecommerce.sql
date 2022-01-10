@@ -7,7 +7,7 @@
             ) }}
             with sample_data as (
 
-                select * from DEMO_DB.maplemonk.Ecommerce
+                select * from DEMO_DB.NoNorm.nonlocations
             ),
             
             final as (
