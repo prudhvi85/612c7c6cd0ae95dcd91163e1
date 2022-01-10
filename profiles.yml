@@ -1,0 +1,14 @@
+default:
+  target: "dev"
+  outputs:
+    dev:
+      type: "snowflake"
+      account: "ug67212.ap-south-1.aws"
+      user: "PaulEggoz"
+      password: "Eggoz@123"
+      role: "ACCOUNTADMIN"
+      database: "EGGOZ"
+      warehouse: "EGGOZANALYTICS"
+      schema: "PUBLIC"
+      threads: 10
+      client_session_keep_alive: false
