@@ -54,7 +54,7 @@ with source_data as (
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
     convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT
-from "DEMO_DB".NONORM._AIRBYTE_RAW_TESTPICKRR2GET_ORDERS_BY_IDS as table_alias
+from "DEMO_DB".NONORM._AIRBYTE_RAW_TESTPICKRR3GET_ORDERS_BY_IDS as table_alias
 -- TESTPICKRR2GET_ORDERS_BY_IDS
 where 1 = 1
 
