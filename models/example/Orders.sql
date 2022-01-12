@@ -129,7 +129,7 @@ with source_data as (
         _AIRBYTE_EMITTED_AT,
         convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT
     -- from "DEMO_DB".NONORM._AIRBYTE_RAW_ORDERS as table_alias
-        from {{var('prefix')}}_AIRBYTE_RAW_ORDERS as table_alias
+        from _AIRBYTE_RAW_{{var('prefix')}}ORDERS as table_alias
     -- ORDERS
     where 1 = 1
 )

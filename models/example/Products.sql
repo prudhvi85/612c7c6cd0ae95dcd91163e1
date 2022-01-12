@@ -35,7 +35,7 @@ select
     _AIRBYTE_AB_ID,
     _AIRBYTE_EMITTED_AT,
     convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT
-from {{var('prefix')}}_AIRBYTE_RAW_PRODUCTS as table_alias
+from _AIRBYTE_RAW_{{var('prefix')}}PRODUCTS as table_alias
 -- PRODUCTS
 where 1 = 1
 
