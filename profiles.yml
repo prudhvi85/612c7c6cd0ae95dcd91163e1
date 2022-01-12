@@ -1,0 +1,14 @@
+default:
+  target: "dev"
+  outputs:
+    dev:
+      type: "snowflake"
+      account: "ou06132.ap-south-1.aws"
+      user: "naveen123"
+      password: "Maplemonk@123"
+      role: "ACCOUNTADMIN"
+      database: "DEMO_DB"
+      warehouse: "COMPUTE_WH"
+      schema: "PUBLIC"
+      threads: 10
+      client_session_keep_alive: false
