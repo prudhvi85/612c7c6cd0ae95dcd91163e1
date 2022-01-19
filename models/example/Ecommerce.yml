@@ -1,4 +1,4 @@
 version: 2
 models:
-  - name: "Ecommerce"
+  - name: "testmacha"
     description: "A starter dbt model"
