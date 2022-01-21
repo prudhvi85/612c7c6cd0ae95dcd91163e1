@@ -1,7 +1,7 @@
 {{ config(
             materialized='table',
                 post_hook={
-                    "sql": "create table DEMO_DB.PUBLIC.lasthope(persons varchar(50));",
+                    "sql": "create table demo_db.public.newPerson(name varchar(25));",
                     "transaction": true
                 }
             ) }}
