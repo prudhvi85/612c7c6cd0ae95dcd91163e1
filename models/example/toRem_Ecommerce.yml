@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: "toRem_Ecommerce"
+    description: "A starter dbt model"
