@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: "tree_Ecommerce"
+    description: "A starter dbt model"
