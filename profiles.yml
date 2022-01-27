@@ -1,0 +1,14 @@
+default:
+  target: "dev"
+  outputs:
+    dev:
+      type: "snowflake"
+      account: "rf47099.ap-south-1.aws"
+      user: "anveshantech"
+      password: "FBvG2vVMN!:6%4"
+      role: "ACCOUNTADMIN"
+      database: "MapleMonk"
+      warehouse: "Anveshan_WH"
+      schema: "PUBLIC"
+      threads: 10
+      client_session_keep_alive: false
