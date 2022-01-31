@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: "test99_customers"
+    description: "A starter dbt model"
