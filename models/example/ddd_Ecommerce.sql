@@ -8,7 +8,7 @@ create table demo_db.batchtest.newPersona(storm varchar(25));",
                         ) }}
                         with sample_data as (
 
-                            select * from DEMO_DB.batchtest.ddd_Ecommerce
+                            select * from MM_TEST.TEST.ddd_Ecommerce
                         ),
                         
                         final as (
