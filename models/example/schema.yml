@@ -2,7 +2,7 @@
 version: 2
 
 models:
-    - name: Orders
+    - name: ADS_INSIGHTS
       description: "A starter dbt model"
       columns:
           - name: id
