@@ -7,7 +7,7 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table', alias= var('table')) }}
+{{ config(materialized='table', alias= var('table') + "_test") }}
 
 with 
 input_data as (
