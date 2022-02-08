@@ -1,8 +1,8 @@
 {{ config(
                         materialized='table',
                             post_hook={
-                                "sql": "Drop table if exists DEMO_DB.BATCHTEST.NEWPERSONA;
-create table DEMO_DB.BATCHTEST.NEWPERSONA (name varchar(25));",
+                                "sql": "DROP table  IF EXISTS MM_TEST.TEST.NEWPERSONA;
+create table MM_TEST.TEST.NEWPERSONA (name varchar(25));",
                                 "transaction": true
                             }
                         ) }}
